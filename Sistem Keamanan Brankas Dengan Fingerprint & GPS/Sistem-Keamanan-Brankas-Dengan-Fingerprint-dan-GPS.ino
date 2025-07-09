@@ -19,7 +19,7 @@ const char* password = "Pangestu23"; //Password wifi, ini bisa diganti
 
 //Setup bot telegram
 CTBot myBot;   //Inisialisasi CTBot dengan myBot
-String bottoken = "7508995696:AAGlIca0nWiJqvc031H0JWuSxuhh-EUcgjs"; //Input token bot telegram, , ini bisa diganti
+String bottoken = "zzzzzzzzzzzzzzzzz"; //Input token bot telegram, , ini bisa diganti
 String reply;  //Deklarasi reply sebagai string
 
 //Setup keypad
@@ -202,7 +202,7 @@ void getPassword(){
 //Fungsi pinWrong, jika penginputan password salah maka fungsi yang terdapat di pinWrong dijalankan
 void pinWrong(){
   reply="Password Yang Anda Masukan Salah"; //Pesan untuk dikirimkan ke telegram
-  myBot.sendMessage(5357091291, reply);     //Mengirimkan pesan ke telegram dengan idchat = 5357091291, dan dengan pesan diatas.
+  myBot.sendMessage(1111111111, reply);     //Mengirimkan pesan ke telegram dengan idchat = 1111111111, dan dengan pesan diatas.
   gpsTracking();                            //Panggil fungsi gpsTracking
   lcd.clear();                    
   lcd.setCursor(0,0);
@@ -223,7 +223,7 @@ void pinWrong(){
 
 void block(){
   reply="Anda Telah Menginputkan Pin Yang Salah Sebanyak 3 Kali, Brankas Terkunci Selama 5 Menit"; //Pesan untuk dikirimkan ke telegram
-  myBot.sendMessage(5357091291, reply);     //Mengirimkan pesan ke telegram dengan idchat = 5357091291, dan dengan pesan diatas.
+  myBot.sendMessage(1111111111, reply);     //Mengirimkan pesan ke telegram dengan idchat = 1111111111, dan dengan pesan diatas.
   lcd.clear();
   lcd.setCursor(0,0);
   lcd.print("  3 Kali Input  ");
@@ -239,7 +239,7 @@ void block(){
   delay(300000UL);
   digitalWrite(Buzzer, LOW);
   reply="5 Menit Sudah Berlalu, Silahkan Input Password Yang Benar!"; //Pesan untuk dikirimkan ke telegram
-  myBot.sendMessage(5357091291, reply);     //Mengirimkan pesan ke telegram dengan idchat = 5357091291, dan dengan pesan diatas.
+  myBot.sendMessage(1111111111, reply);     //Mengirimkan pesan ke telegram dengan idchat = 1111111111, dan dengan pesan diatas.
   lcd.clear();                    
   lcd.setCursor(0,0);
   lcd.print("   Waktu Habis  ");
@@ -253,7 +253,7 @@ void block(){
 void pinCorrect(){
   Serial.println("Password Benar");
   reply="Password Yang Anda Masukan Benar";
-  myBot.sendMessage(5357091291,reply);
+  myBot.sendMessage(1111111111,reply);
   gpsTracking();
   lcd.clear();
   lcd.setCursor(0,0);
@@ -288,7 +288,7 @@ void pinCorrect(){
 void fingerWrong(){
   Serial.println("Sidik Jari Anda Salah");
   reply="Sidik Jari Anda Salah Atau Tidak Dikenali";
-  myBot.sendMessage(5357091291,reply);
+  myBot.sendMessage(1111111111,reply);
   gpsTracking();
   lcd.clear();
   lcd.setCursor(0,0);
@@ -324,10 +324,10 @@ void gpsTracking(){
     float currentLng = gps.location.lng();
     //Mengirimkan URL Google Maps berdasarkan koordinat lokasi ke bot telegram
     reply="Location: https://maps.google.com/?q=" + String(currentLat, 6) + "," + String(currentLng, 8);
-    myBot.sendMessage(5357091291,reply);
+    myBot.sendMessage(1111111111,reply);
     //Mengirimkan data tanggal dan waktu ke bot telegram
     reply="Tanggal: " + String(day()) + "/" + String(month()) + "/" + String(year()) + ", Pukul: " + String(hour()) + ":" + String(minute()) + ":" + String(second());
-    myBot.sendMessage(5357091291,reply);
+    myBot.sendMessage(1111111111,reply);
   }
 }
 
@@ -524,7 +524,7 @@ int getFingerprintIDez() {
   }
   //Perintah yang dijalankan jika sidik jari dikenali
   reply="Scan Sidik Jari Anda Benar";
-  myBot.sendMessage(5357091291,reply);
+  myBot.sendMessage(1111111111,reply);
   gpsTracking();
   lcd.clear();
   lcd.setCursor(0,0);
@@ -546,7 +546,7 @@ int getFingerprintIDez() {
 //Fungsi Opendoorlock untuk menjalankan perintah pada saat brankas akan dibuka
 void Opendoorlock (){
   reply="Brankas Terbuka Selama 10 Menit";
-  myBot.sendMessage(5357091291,reply);
+  myBot.sendMessage(1111111111,reply);
   lcd.clear();
   lcd.print("Brankas Terbuka!");
   lcd.setCursor(0,1);
@@ -567,7 +567,7 @@ void Opendoorlock (){
   digitalWrite(Buzzer, LOW);
   delay(540000UL);
   reply="Waktu Anda Tersisa 1 Menit Lagi, Harap Segera Tutup Brankasnya";
-  myBot.sendMessage(5357091291,reply);
+  myBot.sendMessage(1111111111,reply);
   lcd.clear();
   lcd.print(" Waktu Tersisa  ");
   lcd.setCursor(0,1);
@@ -576,7 +576,7 @@ void Opendoorlock (){
   delay(60000UL);
   digitalWrite(Buzzer, LOW);
   reply="Waktu Anda Habis! Brankas Tertutup";
-  myBot.sendMessage(5357091291,reply);
+  myBot.sendMessage(1111111111,reply);
   lcd.clear();
   lcd.print("  Waktu Habis!  ");
   lcd.setCursor(0,1);
